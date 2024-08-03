@@ -1,6 +1,8 @@
 package com.ironhack.medicalapp.service;
 
+import com.ironhack.medicalapp.dto.RegisterDTO;
 import com.ironhack.medicalapp.model.User;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ public interface UserService {
      * @param user the User entity to be saved.
      * @return the saved User entity.
      */
-    User saveUser(User user);
+    User saveUser(RegisterDTO user);
 
     /**
      * This method is used to retrieve a User from the database by its username.
@@ -28,4 +30,7 @@ public interface UserService {
      * @return a List of all User entities.
      */
     List<User> getUsers();
+
+@Transactional
+    void deleteUser(Long id);
 }

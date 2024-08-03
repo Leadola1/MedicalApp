@@ -10,4 +10,6 @@ public interface PatientService {
     Patient getPatient(String email);
 
     List<Patient> getPatients();
+
+    Patient updatePatientAddress(Long id, String address);
 }

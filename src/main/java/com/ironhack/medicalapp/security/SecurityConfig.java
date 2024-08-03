@@ -71,8 +71,10 @@ public class SecurityConfig {
         http.authorizeHttpRequests((requests) -> requests
                 .requestMatchers("/api/login/**").permitAll()// public endpoint, we could add more if we wanted to
                 .requestMatchers("api/greet").permitAll()
+                .requestMatchers("api/user").permitAll()
                 // could be deleted .requestMatchers(GET, "/api/users").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .requestMatchers(GET, "/api/users").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .requestMatchers(GET, "/api/doctor").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .requestMatchers(POST, "/api/users").hasAnyAuthority("ROLE_ADMIN")
                 .requestMatchers(POST, "/api/roles").hasAnyAuthority("ROLE_ADMIN")
                 .requestMatchers(POST, "/api/roles/add-to-user").hasAnyAuthority("ROLE_ADMIN")

@@ -20,12 +20,20 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(name = "doctor_id")
-    private User doctor;
+    private Doctor doctor;
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
-    private User patient;
+    private Patient patient;
 
     private String appointmentType;
     private String notes;
+
+    public Appointment(LocalDateTime dateTime, Doctor doctor, Patient patient, String appointmentType, String notes) {
+        this.dateTime = dateTime;
+        this.doctor = doctor;
+        this.patient = patient;
+        this.appointmentType = appointmentType;
+        this.notes = notes;
+    }
 }

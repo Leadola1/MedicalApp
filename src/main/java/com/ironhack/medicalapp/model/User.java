@@ -35,9 +35,9 @@ public class User {
     )
     private Collection<Role> roles = new ArrayList<>();
 
-    public User(String username, String email, Collection<Role> roles) {
+    public User(String email,String username,  String password) {
         this.username = username;
         this.email = email;
-        this.roles = roles;
+        this.password = password;
     }
 }

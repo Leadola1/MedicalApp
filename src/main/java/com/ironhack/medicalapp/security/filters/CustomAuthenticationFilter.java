@@ -54,11 +54,11 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
             // Creating an Authentication token with given username and password
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-                    loginRequest.getUsername(),
+                    loginRequest.getEmail(),
                     loginRequest.getPassword()
             );
 
-            log.info("Username is: {}", loginRequest.getUsername());
+            log.info("Username is: {}", loginRequest.getEmail());
             log.info("Password is: {}", loginRequest.getPassword());
 
             // Attempting to authenticate the user with the given credentials
